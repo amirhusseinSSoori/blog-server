@@ -1,7 +1,7 @@
 package routing
 
 import (
-	routes "blog/internal/modules/provider/routes"
+	routes "blog/internal/provider/routes"
 
 	"github.com/gin-gonic/gin"
 )
