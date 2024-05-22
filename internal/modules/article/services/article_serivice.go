@@ -1,7 +1,7 @@
 package services
 
 import (
-	ArticleModel "blog/internal/modules/article/models"
+	ArticleResponse "blog/internal/modules/article/reponses"
 	ArtcileRepository "blog/internal/modules/article/repositories"
 )
 
@@ -17,10 +17,12 @@ func New() *ArticleService {
 
 }
 
-func (articleService *ArticleService) GetFeaturedArticles() []ArticleModel.Article {
-	return articleService.artcileRepository.List(4)
+func (articleService *ArticleService) GetFeaturedArticles() ArticleResponse.Articles {
+	articles := articleService.artcileRepository.List(4)
+	return ArticleResponse.ToArticles(articles)
 }
 
-func (articleService *ArticleService) GetStoriesArticles() []ArticleModel.Article {
-	return articleService.artcileRepository.List(6)
+func (articleService *ArticleService) GetStoriesArticles() ArticleResponse.Articles {
+	article := articleService.artcileRepository.List(6)
+	return ArticleResponse.ToArticles(article)
 }

@@ -27,7 +27,7 @@ func Seed() {
 
 	// for aticle
 
-	aticle := aticleModel.Article{Title: "Title 1", Content: "Content 1", UserID: 1}
+	aticle := aticleModel.Article{Title: "Title 2", Content: "Content 2", UserID: 2}
 
 	db.Create(&aticle)
 
