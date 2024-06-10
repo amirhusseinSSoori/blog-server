@@ -1,8 +1,9 @@
 package services
 
 import (
-	ArticleResponse "blog/internal/modules/article/reponses"
-	ArtcileRepository "blog/internal/modules/article/repositories"
+	ArticleResponse "blog/internal/modules/articles/reponses"
+	ArtcileRepository "blog/internal/modules/articles/repositories"
+	"errors"
 )
 
 type ArticleService struct {
@@ -25,4 +26,14 @@ func (articleService *ArticleService) GetFeaturedArticles() ArticleResponse.Arti
 func (articleService *ArticleService) GetStoriesArticles() ArticleResponse.Articles {
 	article := articleService.artcileRepository.List(6)
 	return ArticleResponse.ToArticles(article)
+}
+
+func (articleService *ArticleService) Find(id int) (ArticleResponse.Article, error) {
+	var response ArticleResponse.Article
+	article := articleService.artcileRepository.Find(id)
+
+	if article.ID == 0 {
+		return response, errors.New("article not found")
+	}
+	return ArticleResponse.ToArticle(article), nil
 }

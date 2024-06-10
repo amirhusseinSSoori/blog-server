@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	ArticleService "blog/internal/modules/article/services"
+	ArticleService "blog/internal/modules/articles/services"
 	"blog/pkg/html"
 	"net/http"
 

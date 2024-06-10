@@ -1,7 +1,7 @@
 package migration
 
 import (
-	articleModle "blog/internal/modules/article/models"
+	articleModle "blog/internal/modules/articles/models"
 	userModel "blog/internal/modules/user/models"
 	"blog/pkg/database"
 	"fmt"

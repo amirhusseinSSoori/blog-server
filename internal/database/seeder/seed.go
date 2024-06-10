@@ -3,7 +3,7 @@ package seeder
 import (
 	userModel "blog/internal/modules/user/models"
 
-	aticleModel "blog/internal/modules/article/models"
+	aticleModel "blog/internal/modules/articles/models"
 	"blog/pkg/database"
 	"log"
 

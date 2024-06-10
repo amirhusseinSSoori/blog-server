@@ -1,7 +1,7 @@
 package reponses
 
 import (
-	ArticleModel "blog/internal/modules/article/models"
+	ArticleModel "blog/internal/modules/articles/models"
 	UserResponse "blog/internal/modules/user/reponses"
 	"fmt"
 )
