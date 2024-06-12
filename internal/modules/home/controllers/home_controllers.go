@@ -9,7 +9,7 @@ import (
 )
 
 type Controller struct {
-	articleService ArticleService.ArticleRepositoryInterface
+	articleService ArticleService.ArticleSerivceInterface
 }
 
 func New() *Controller {

@@ -1,4 +1,4 @@
-package reponses
+package responses
 
 import (
 	userModel "blog/internal/modules/user/models"
