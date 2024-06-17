@@ -6,6 +6,7 @@ import (
 	converter "blog/pkg/converters"
 	"blog/pkg/errors"
 	"blog/pkg/html"
+	"blog/pkg/old"
 	sessions "blog/pkg/sessions"
 	"log"
 	"net/http"
@@ -40,6 +41,10 @@ func (controller *Controller) HandleRegister(c *gin.Context) {
 		errors.SetFromErrors(err)
 
 		sessions.Set(c, "errors", converter.MapToString(errors.Get()))
+
+		old.Init()
+		old.Set(c)
+		sessions.Set(c, "old", converter.UrlValuesToString(old.Get()))
 
 		c.Redirect(http.StatusFound, "/register")
 		return
